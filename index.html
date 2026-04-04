@@ -73,16 +73,64 @@ td {
 hr {
   margin: 20px 0;
 }
+
+/* ハンバーガー */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2000;
+  background: white;
+  border: 1px solid black;
+}
+
+/* オーバーレイ（暗くする） */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1500;
+}
+
+/* 表示状態 */
+.overlay.show {
+  display: block;
+}
+
+/* スマホ用 */
+@media (max-width: 768px) {
+
+  .sidebar {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    height: 100%;
+    transition: 0.3s;
+    z-index: 1600;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="overlay" onclick="toggleMenu()"></div>
+<button class=""menu-btn" onclick="toggleMenu()">≡</button>
+
 <div class="container">
 
   <!-- サイドバー -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <p><b>メニュー</b></p>
     <p><a onclick="showPage('profile')">プロフィール</a></p>
     <p><a onclick="showPage('education')">経歴</a></p>
@@ -191,6 +239,24 @@ function showPage(id){
   });
   document.getElementById(id).classList.add('active');
 }
+
+
+function toggleMenu(){
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.querySelector(".overlay");
+  const btn = document.querySelector(".menu-btn");
+
+  sidebar.classList.toggle("open");
+  overlay.classList.toggle("show");
+
+  // ☰ ⇔ × 切り替え
+  if(btn.textContent === "☰"){
+    btn.textContent = "×";
+  } else {
+    btn.textContent = "☰";
+  }
+}
+</script>
 </script>
 
 </body>
