@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>横家ryotennのホームページ</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "MS Gothic", monospace;
+  background: rgb(216, 223, 244);
+  color: black;
+}
+
+/* レイアウト */
+.container {
+  display: flex;
+}
+
+/* サイドバー */
+.sidebar {
+  width: 180px;
+  border-right: 1px solid black;
+  background: #cacdf1;
+  padding: 10px;
+}
+
+/* メイン */
+.main {
+  padding: 20px;
+  flex: 1;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.left {
+    flex: 1;
+}
+
+.right {
+    flex: 1;
+}
+/* リンク */
+a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ページ切り替え */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* 表 */
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: none;
+  padding: 5px;
+}
+
+hr {
+  margin: 20px 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- サイドバー -->
+  <div class="sidebar">
+    <p><b>メニュー</b></p>
+    <p><a onclick="showPage('profile')">プロフィール</a></p>
+    <p><a onclick="showPage('education')">経歴</a></p>
+    <p><a onclick="showPage('hobby')">趣味</a></p>
+  </div>
+
+  <!-- メイン -->
+  <div class="main">
+    <h1 align="center">Ryotenn Yokoyaのホームページ</h1>
+
+    <div id="profile" class="page active"">
+    <div class="content">
+    <!-- プロフィール -->
+    <div class="left">
+      <img src = "masaoka.siki.jpg" width = "360">
+      <br>
+      <br>
+      <table>
+        <tbody>
+            <tr><td width="14">&nbsp;</td><td>横家遼典<br>Ryotenn Yokoya</td></tr>
+            <tr><td width="14">&nbsp;</td><td>生年月日：2004年10月27日</td></tr>
+            <tr><td width="14">&nbsp;</td><td>出身地：グアム</td></tr>
+            <tr><td width="14">&nbsp;</td><td>血液型：P型</td></tr>
+            <tr><td width="14">&nbsp;</td><td>職業：兵庫教育大学テニス部外部コーチ</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="right">
+        <b>
+            当サイトの内容、テキスト、画像等の無断転載・無断使用を固く禁じます。
+            <br>
+            また、まとめサイト等への引用を厳禁いたします。
+            <br>
+            お問い合わせは家凸でのご連絡をお願いします。
+            <br>
+            <br>
+            <font color="#ff0000">
+            ※Ryotenn Yokoyaを名乗る偽サイトの報告が寄せられておりますので
+            ご注意ください。
+            </font>
+            <br>
+            <br>
+            ※SNS上でRyotenn Yokoyaを名乗るアカウントがあるといった”なりすまし”の報告が
+            寄せられておりますが、Ryotenn Yokoyaは一切行っておりません。
+            <br>
+            ただし、Ryotenn Yokoyaの周辺の人間が勝手に行っている可能性はございます。
+        </b>
+    </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- 学歴 -->
+    <div id="education" class="page">
+      <h2>経歴</h2>
+      <ul>
+        <li>2004年：この世界に誕生。</li>
+        <li>2005年：たつの市長就任（同年8月解雇）。</li>
+        <li>2006年：万引きにより死刑（アバシリ刑務所収監）。</li>
+        <li>2007年：安倍首相突然の辞任により、内閣総理大臣に就任。</li>
+        <li>2008年：ryotenn率いる女子ソフトボール日本代表、悲願の金メダル獲得。</li>
+        <li>2009年：R-1グランプリ、3回戦敗退。</li>
+        <li>2010年：小惑星探査機「はやぶさ」が7年ぶりに帰還。帰宅途中の横家氏に直撃。</li>
+        <li>2011年：大相撲での八百長発覚により、日本相撲協会から追放。</li>
+        <li>2012年：米大統領にヨコヤ再選。</li>
+        <li>2013年：北朝鮮で金正恩粛清、横家氏の独裁強化。</li>
+        <li>2014年：エボラ出血熱感染拡大、最初の犠牲者に。</li>
+        <li>2015年：中東難民、横家家に殺到。</li>
+        <li>2016年：天皇陛下、退位の意向示唆。次期天皇候補へ。</li>
+        <li>2017年：中国、横家氏「1強」確立。</li>
+        <li>2018年：日産カルロス・ゴーン会長を抹消。</li>
+        <li>2019年：ローマ教皇ヨコヤが38年ぶり来日。</li>
+        <li>2020年：森友学園理事長に就任。</li>
+        <li>2021年：「加東のドン・ファン」こと横家氏、兵庫教育大学テニス部外部コーチに就任。</li>
+        <li>2022年：旧統一教会を単独で襲撃、壊滅。</li>
+        <li>2023年：LGBT法成立も、横家氏には適応されず。</li>
+        <li>2024年：新貨幣発行。100円札に横家氏。</li>
+        <li>2025年：万博公式キャラクター投票、2位にランクイン。</li>
+      </ul>
+    </div>
+
+    <!-- 趣味 -->
+    <div id="hobby" class="page">
+      <h2>趣味</h2>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+<hr>
+<p align="center">あなたは <b>1145141919810</b> 人目の訪問者です。</p>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
