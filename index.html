@@ -79,7 +79,7 @@ hr {
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 2000;
+  z-index: 3000;
   background: white;
   border: 1px solid black;
 }
@@ -93,7 +93,7 @@ hr {
   height: 100%;
   background: rgba(0,0,0,0.5);
   display: none;
-  z-index: 1500;
+  z-index: 1000;
 }
 
 /* 表示状態 */
@@ -124,8 +124,8 @@ hr {
 
 <body>
 
-<div class="overlay" onclick="toggleMenu()"></div>
 <button class=""menu-btn" onclick="toggleMenu()">≡</button>
+<div class="overlay" onclick="toggleMenu()"></div>
 
 <div class="container">
 
@@ -238,6 +238,15 @@ function showPage(id){
     p.classList.remove('active');
   });
   document.getElementById(id).classList.add('active');
+
+  // サイドバー閉じる（スマホ用）
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.querySelector(".overlay");
+  const btn = document.querySelector(".menu-btn");
+
+  sidebar.classList.remove("open");
+  if(overlay) overlay.classList.remove("show");
+  if(btn) btn.textContent = "☰";
 }
 
 
@@ -256,7 +265,6 @@ function toggleMenu(){
     btn.textContent = "☰";
   }
 }
-</script>
 </script>
 
 </body>
